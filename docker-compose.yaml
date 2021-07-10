@@ -11,7 +11,7 @@ services:
         volumes: 
             - ./desafio-frontend:/frontend/home/node/app
         extra_hosts: 
-            - "host.docker.internal:192.168.0.12"
+            - "host.docker.internal:172.17.0.1"
     
     backend:
         build: desafio-backend
@@ -22,6 +22,6 @@ services:
         volumes: 
             - ./desafio-backend:/backend/home/node/app
         extra_hosts: 
-            - "host.docker.internal:192.168.0.12"
+            - "host.docker.internal:172.17.0.1"
         depends_on: 
             - frontend
